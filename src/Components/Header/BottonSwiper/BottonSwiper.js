@@ -43,47 +43,47 @@ const BottonSwiper = () => {
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads1} alt="slide1" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads2} alt="slide2" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads3} alt="slide3" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads4} alt="slide4" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads5} alt="slide5" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads6} alt="slide6" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads7} alt="slide7" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads8} alt="slide8" className='' />
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="swiper-slide-buttom">
                     <Link to="/allproducts">
                         <img src={ads9} alt="slide9" className='' />
                     </Link>

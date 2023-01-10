@@ -31,6 +31,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+
 }
 
 .swiper-slide img {
@@ -51,7 +52,11 @@
 
         width: 120%;
         height: 70%;
+    }
 
+    .swiper-slide-buttom {
+        height: 100px;
+        margin-top: 36px;
     }
 
 }

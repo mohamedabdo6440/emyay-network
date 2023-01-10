@@ -1,0 +1,7 @@
+.navBackground {
+
+    background-image: url("../../../images/Nav.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

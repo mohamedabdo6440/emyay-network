@@ -12,7 +12,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [ErrorMessage, setErrorMessage] = useState("")
-  const navegate = useNavigate()
+  const navegate = useNavigate();
 
 
   //Handle Login Exist Account

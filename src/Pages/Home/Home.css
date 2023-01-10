@@ -1,0 +1,10 @@
+.Home {
+    height: 190vh;
+}
+
+
+@media screen and (max-width: 575px) {
+    .Home {
+        height: 275vh;
+    }
+}

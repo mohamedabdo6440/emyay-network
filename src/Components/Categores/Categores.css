@@ -1,0 +1,32 @@
+.account {
+    cursor: pointer;
+}
+
+.side_login {
+    text-decoration: none;
+    color: white;
+}
+
+.side_login:hover {
+    color: #eee;
+}
+
+.allCategores {
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.list_categores {
+    list-style: none;
+}
+
+.list_categores li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.offcanvas.show:not(.hiding),
+.offcanvas.showing {
+    width: 251px;
+}

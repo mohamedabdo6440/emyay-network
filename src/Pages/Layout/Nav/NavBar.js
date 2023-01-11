@@ -32,7 +32,7 @@ const NavBar = ({ loginState }) => {
 
     return (
         <>
-            <Navbar bg="dark" expand="sm" className="navbar navBackground  sticky-top" style={{ height: "60px", padding: "10px", margin: "0" }}>
+            <Navbar bg="dark" expand="sm" className="navbar navBackground  sticky-top " >
                 <Container fluid>
                     <NavLink to="/" className="font-en text-light  mx-sm-2 mx-lg-5">
                         {" "}
@@ -43,7 +43,7 @@ const NavBar = ({ loginState }) => {
 
 
                     <Navbar.Toggle
-                        style={{ color: "white", backgroundColor: "white" }}
+                        style={{ backgroundColor: "white" }}
                         aria-controls="navbarScroll"
                     />
 
@@ -54,8 +54,6 @@ const NavBar = ({ loginState }) => {
                         id="navbarScroll"
                         style={{
                             color: "white",
-                            marginTop: "10px",
-                            width: "100%",
                         }}
                     >
 
@@ -70,8 +68,8 @@ const NavBar = ({ loginState }) => {
                         />
 
                         <Nav
-                            className="mx-sm-2 mx-lg-5 p-0"
-                            style={{ maxHeight: "100px", color: "white" }}
+                            className=" "
+                            style={{}}
                             navbarScroll
                         >
                             <NavLink
@@ -83,19 +81,19 @@ const NavBar = ({ loginState }) => {
 
                                 <div
                                     style={{
-                                        color: "whie",
+
                                         fontSize: "10px",
                                         maxWidth: "150px",
                                         minWidth: "100px",
                                         opacity: "0.8",
                                     }}
-                                    className="text-center font-ar mx-1 my-auto "
+                                    className="text-center font-ar mx-1 my-auto text-warning "
                                 >
 
                                     {
                                         userIN !== null ? (
 
-                                            ` مرحباً بك  ${userIN !== null ? userIN.replace("@gmail.com", "") : userIN}`
+                                            `  مرحباً بك ${userIN !== null ? userIN.replace("@gmail.com", "") : userIN}`
 
                                         ) : (
                                             "تسجيل الدخول"
@@ -111,19 +109,17 @@ const NavBar = ({ loginState }) => {
                                 style={{ color: "white", textDecoration: "none" }}
                             >
                                 <h3 className=" mt-2 me-2">
-                                    <i className="fa-solid fa-cart-arrow-down "></i>
+
+                                    <button type="button" className="btn  text-white position-relative">
+                                        <i className="fa-solid fa-cart-shopping"></i>
+                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            99+
+                                            <span className="visually-hidden">unread messages</span>
+                                        </span>
+                                    </button>
+
                                 </h3>
-                                <div
-                                    style={{
-                                        color: "whie",
-                                        fontSize: "11px",
-                                        width: "80px",
-                                        opacity: "0.8",
-                                    }}
-                                    className="text-center font-ar my-auto text-info"
-                                >
-                                    <span>عربه التسوق</span>{" "}
-                                </div>
+
                             </NavLink>
 
                             <Nav.Link
@@ -137,12 +133,13 @@ const NavBar = ({ loginState }) => {
 
 
                                         <div
-                                            style={{ fontSize: "5px", width: "80px", cursor: "pointer" }}
-                                            className="text-center text-secondary font-ar my-auto"
+                                            style={{ fontSize: "16px", cursor: "pointer" }}
+                                            className="text-center btn text-white font-ar my-auto  d-flex align-items-center"
                                             onClick={LogOut}
                                         >
-                                            {" "}
-                                            <h6 className="p-2">مغادره</h6>{" "}
+                                            <i className="fa-solid fa-right-from-bracket"></i>
+
+                                            <span className="mx-2 mb-2"> خروج</span>{" "}
                                         </div>
 
 

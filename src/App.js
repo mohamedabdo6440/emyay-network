@@ -8,6 +8,9 @@ import Error from './Pages/Error/ErrorPage'
 import { useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Firebase/Firebase";
+import HomeAllProducts from "./Pages/HomeAllProducts/HomeAllProducts";
+import AddProduct from "./Components/Product/AddProduct/AddProduct";
+
 
 
 function App() {
@@ -17,7 +20,6 @@ function App() {
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser ? currentUser.email : currentUser);
   })
-
   console.log(user);
 
 
@@ -33,6 +35,8 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/allproducts" element={user ? <HomeAllProducts /> : <LoginPage />} />
+              <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} />
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>

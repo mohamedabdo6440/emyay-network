@@ -1,0 +1,104 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "categoryName": "اطفال",
+            "name": "عجلة أطفال",
+            "oldprice": 450,
+            "newprice": 390,
+            "description": "عجلة اطفال من المعدن لتعليم الطفل القياده والمشي امنه علي الطفل",
+            "rate": 3,
+            "image": "https://m.media-amazon.com/images/I/61dxPqoAWQS.jpg"
+        },
+        {
+            "id": 2,
+            "categoryName": "ساعات",
+            "name": "ساعه يد روسي",
+            "oldprice": 930,
+            "newprice": 590,
+            "description": "ساعه روسي الصنع ضد الماء والعوامل الخارجيه تعمل بشكل ممتاز ولها مميزات داخليه",
+            "rate": 5,
+            "image": "https://m.media-amazon.com/images/I/71T6cspSuaL._AC_SX679_.jpg"
+        },
+        {
+            "id": 3,
+            "categoryName": "ادوات كهربائيه",
+            "name": "غلايه كهربائيه",
+            "oldprice": 230,
+            "newprice": 190,
+            "description": "غلايه موفره للكهرباء وامنه جدا وسريعة التحضير",
+            "rate": 3,
+            "image": "https://m.media-amazon.com/images/I/61j2bgU9x5L._AC_SX569_.jpg"
+        },
+        {
+            "id": 4,
+            "categoryName": "ملابس",
+            "name": "تيشرت شتوي",
+            "oldprice": 550,
+            "newprice": 290,
+            "description": "تيشرت شتوي من القطن المصري خامه عالية الجوده ماركه تركي لا يتاثر بالماء",
+            "rate": 5,
+            "image": "https://m.media-amazon.com/images/I/91SQ-BPRmeL._AC_SX522_.jpg"
+        },
+        {
+            "id": 5,
+            "categoryName": "ملابس",
+            "name": "بنطلون جبردين",
+            "oldprice": 250,
+            "newprice": 190,
+            "description": "بنطلون جبردين ماركه تركي ليكرا مريح جدا ولا يتاثر بالماء ",
+            "rate": 4,
+            "image": "https://m.media-amazon.com/images/I/51L5ExWwXGL._AC_SX679_.jpg"
+        },
+        {
+            "id": 6,
+            "categoryName": "ملابس",
+            "name": "كوتشي اديدس",
+            "oldprice": 850,
+            "newprice": 430,
+            "description": "كوتشي ماركة اديدس اصلي الصنع طبي يحافظ علي القدم له ضمان من الفرع الاصلي لعيوب الصناعه",
+            "rate": 5,
+            "image": "https://m.media-amazon.com/images/I/51JOnHZFxhL._AC_SY500_.jpg"
+        },
+        {
+            "id": 7,
+            "categoryName": "ملابس",
+            "name": "جاكت جلد",
+            "oldprice": 1050,
+            "newprice": 920,
+            "description": "جاكت جلد طبيعي عالي الجوده ومناسب لكل الاعمار ",
+            "rate": 4,
+            "image": "https://m.media-amazon.com/images/I/81LEXEThfBL._AC_SX522_.jpg"
+        },
+        {
+            "id": 8,
+            "categoryName": "ادوات كهربائيه",
+            "name": "غسالة اطباق",
+            "oldprice": 4050,
+            "newprice": 3090,
+            "description": "غسالة اطباق ماركة المانيه عالية الجوده تعمل بكفائه استعمال اربع اشهر",
+            "rate": 5,
+            "image": "https://m.media-amazon.com/images/I/51Vh8z0wxtL.__AC_SY445_SX342_QL70_ML2_.jpg"
+        },
+        {
+            "id": 9,
+            "categoryName": "اطفال",
+            "name": "بامبرز اطفال",
+            "oldprice": 170,
+            "newprice": 130,
+            "description": "بامبرز اطفال مقاس  6كل الكميات متوفره وباسعار اقل من الجميع لفتره محدوده ولنفاذ الكميه",
+            "rate": 5,
+            "image": "https://m.media-amazon.com/images/I/81zU+LzC4LL._AC_SY300_SX300_.jpg"
+        },
+        {
+            "id": 10,
+            "categoryName": "ادوات كهربائيه",
+            "name": "ماكينة حلاقه رجالي",
+            "oldprice": 350,
+            "newprice": 190,
+            "description": "ماكينة حلاقه رجالي ايطالي الصنع تعمل بشكل ممتاز عن تجربه وامنه جدا",
+            "rate": 4,
+            "image": "https://m.media-amazon.com/images/I/61-KdeYpshL._AC_SX569_.jpg"
+        }
+    ]
+}

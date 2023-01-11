@@ -1,9 +1,15 @@
 .Home {
-    height: 190vh;
+    height: 215vh;
 }
 
 
 @media screen and (max-width: 575px) {
+    .Home {
+        height: 275vh;
+    }
+}
+
+@media screen and (width: 350px) {
     .Home {
         height: 282vh;
     }

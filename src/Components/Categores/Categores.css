@@ -19,11 +19,13 @@
 
 .list_categores {
     list-style: none;
+    padding: 0;
+
 }
 
 .list_categores li {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .offcanvas.show:not(.hiding),

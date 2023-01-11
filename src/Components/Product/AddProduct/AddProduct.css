@@ -1,0 +1,21 @@
+.form-content {
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%), 0 9px 9px 0 rgb(0 0 0 / 19%);
+    border-radius: 10px;
+}
+
+.form-control {
+    border-radius: 1.5rem;
+}
+
+.btnSubmit {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #3a3b3b;
+    color: #fff;
+}

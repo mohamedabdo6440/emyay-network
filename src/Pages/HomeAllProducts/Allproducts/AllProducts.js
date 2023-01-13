@@ -1,28 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './AllProducts.css'
 import Product from '../../../Components/Product/Product'
-import Allproducts from '../../../test.json'
+// import Allproducts from '../../../test.json'
+import { getDocs, collection } from 'firebase/firestore'
+import { db } from '../../../Firebase/Firebase'
 const AllProducts = () => {
 
-    //get all products
-    const [allproducts, setAllProducts] = useState(Allproducts.products)
+
+    const [AllProducts, setAllProducts] = useState([{}])
+
+    const newProductRef = collection(db, "addProduct")
+    //get product from database
+    useEffect(() => {
+        const getData = async () => {
+            const dataFire = await getDocs(newProductRef);
+            setAllProducts(dataFire.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }
+        getData()
+    }, [newProductRef]);
+
+
 
 
     return (
         <div className='row products_list'>
 
             {
-                allproducts.map((product) => {
+                AllProducts.map((product) => {
                     return (
                         <Product
                             key={product.id}
                             categoryName={product.categoryName}
-                            name={product.name}
+                            name={product.productTitle}
                             oldprice={product.oldprice}
                             newprice={product.newprice}
-                            description={product.description}
+                            description={product.productDescription}
                             rate={product.rate}
-                            image={product.image}
+                            image={product.productImage}
                         />
                     )
                 })

@@ -21,7 +21,7 @@ function SideBar({ userIN }) {
 
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title><div className=''><Link to="/"><i className="fa-solid fa-house text-info"></i></Link></div></Offcanvas.Title>
+                    <Offcanvas.Title><div className=''><Link to="/"><i className="fa-solid fa-house text-dark"></i></Link></div></Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Categores userIN={userIN} />

@@ -60,7 +60,7 @@ const Product = ({ categoryName, name, oldprice, newprice, description, rate, im
         }
     }
     return (
-        <div className='col-md-6'>
+        <div className='col-md-4'>
             <Card className='shadow-card text-center my-3 mx-2'>
                 <Link to="/detilsproduct">
                     <Card.Img variant="top" src={image} className="image_product" />

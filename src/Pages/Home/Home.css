@@ -1,16 +1,85 @@
-.Home {
-    height: 215vh;
-}
-
-
-@media screen and (max-width: 575px) {
+@media only screen and (min-width : 320px) and (max-width : 480px) {
     .Home {
-        height: 275vh;
+        height: 575vh;
     }
 }
 
-@media screen and (width: 350px) {
+/* Smartphones (landscape) ----------- */
+
+@media only screen and (min-width : 321px) {
     .Home {
-        height: 282vh;
+        height: 470vh;
+    }
+}
+
+@media only screen and (max-width : 375px) {
+    .Home {
+        height: 505vh;
+    }
+}
+
+@media only screen and (max-width : 414px) {
+    .Home {
+        height: 400vh;
+    }
+}
+
+@media only screen and (max-width : 390px) {
+    .Home {
+        height: 410vh;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+    .Home {
+        height: 445vh;
+    }
+}
+
+@media only screen and (max-width : 820px) {
+    .Home {
+        height: 145vh;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .Home {
+        height: 161vh;
+    }
+}
+
+@media only screen and (max-width : 912px) {
+    .Home {
+        height: 122vh;
+    }
+}
+
+@media only screen and (max-width : 540px) {
+    .Home {
+        height: 578vh;
+    }
+}
+
+@media only screen and (max-width : 280px) {
+    .Home {
+        height: 449vh;
+    }
+}
+
+@media only screen and (max-width : 412px) {
+    .Home {
+        height: 390vh;
+    }
+}
+
+@media screen and (max-width : 1025px) {
+    .Home {
+        height: 285vh;
+    }
+}
+
+@media only screen and (min-width : 1280px) {
+    .Home {
+        height: 233vh;
     }
 }

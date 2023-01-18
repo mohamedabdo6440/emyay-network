@@ -8,6 +8,7 @@ import AllProducts from './Allproducts/AllProducts'
 //handle data from redux
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../Redux/store/ProductsSlice'
+import Footer from '../Layout/Footer/Footer'
 
 const HomeAllProducts = () => {
 
@@ -33,6 +34,8 @@ const HomeAllProducts = () => {
                 <AllProducts isLoading={isLoading} Allproducts={Allproducts} />
 
             </div>
+
+            <Footer />
         </>
     )
 }

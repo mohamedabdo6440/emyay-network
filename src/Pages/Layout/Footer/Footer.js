@@ -14,26 +14,22 @@ const Footer = () => {
 
                 <section className="mb-4">
 
-                    <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    <a className="btn btn-outline-light btn-floating m-1" rel="noreferrer" href="https://www.facebook.com/MohameAsr" target={"_blank"} role="button"
                     ><i className="fab fa-facebook-f"></i
                     ></a>
 
 
-                    <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    <a className="btn btn-outline-light btn-floating m-1" rel="noreferrer" href="https://twitter.com/MohamedAbdoAsr1" target={"_blank"} role="button"
                     ><i className="fab fa-twitter"></i
                     ></a>
 
 
 
 
-                    <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><i className="fab fa-instagram"></i
-                    ></a>
+                    <a className="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/m7md_3bdo_3sr/" rel="noreferrer" target={"_blank"} role="button">
+                        <i className="fab fa-instagram"></i>
+                    </a>
 
-
-
-                    <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><i className="fa-brands fa-youtube"></i></a>
                 </section>
 
             </div>

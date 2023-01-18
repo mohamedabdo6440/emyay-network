@@ -13,8 +13,8 @@ function SideBar({ userIN }) {
     return (
         <>
             <Button variant="" className='h-75 my-2' onClick={handleShow}>
-                <div className='d-flex justify-content-center'>
-                    <span className='ms-2 text-white'>الكل</span>
+                <div className='d-flex justify-content-center text-white'>
+                    <span className='ms-2'>الكل</span>
                     <span> <i className="fa-sharp fa-solid fa-bars"></i></span>
                 </div>
             </Button>

@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HomeAllProducts.css'
 
 //ads image
 import adsproducts from '../../images/ProductsAds/adsproducts.jpg'
 import AllProducts from './Allproducts/AllProducts'
 
+//handle data from redux
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllProducts } from '../../Redux/store/ProductsSlice'
 
 const HomeAllProducts = () => {
+
+    //handle data from redux
+    const { isLoading, Allproducts } = useSelector((state) => state.products);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllProducts())
+    }, [dispatch])
+
     return (
         <>
 
@@ -19,8 +30,8 @@ const HomeAllProducts = () => {
                     <img src={adsproducts} alt="adsProducts" className='w-100 h-50 ' />
                 </div>
 
+                <AllProducts isLoading={isLoading} Allproducts={Allproducts} />
 
-                <AllProducts />
             </div>
         </>
     )

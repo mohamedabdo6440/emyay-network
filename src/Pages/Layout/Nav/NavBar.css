@@ -1,7 +1,16 @@
 .navBackground {
 
-    background-image: url("../../../images/Nav.gif");
+    background-image: url("../../../images/Nav2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('../../../images/logo.svg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;
 }

@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import SideBar from "../../../Components/SideBar/SideBar";
 
+
 import { Outlet, NavLink } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../../Firebase/Firebase";
@@ -36,8 +37,8 @@ const NavBar = ({ loginState }) => {
                 <Container fluid>
                     <NavLink to="/" className="font-en text-light  mx-sm-2 mx-lg-5">
                         {" "}
-                        <div>
-                            <img src={""} className="logo" alt="logo" />{" "}
+                        <div className="logo">
+
                         </div>
                     </NavLink>
 
@@ -50,7 +51,7 @@ const NavBar = ({ loginState }) => {
 
 
                     <Navbar.Collapse
-                        className="bg-dark navBackground"
+                        className=" navBackground my-2 mx-0"
                         id="navbarScroll"
                         style={{
                             color: "white",
@@ -82,12 +83,12 @@ const NavBar = ({ loginState }) => {
                                 <div
                                     style={{
 
-                                        fontSize: "10px",
+                                        fontSize: "12px",
                                         maxWidth: "150px",
                                         minWidth: "100px",
                                         opacity: "0.8",
                                     }}
-                                    className="text-center font-ar mx-1 my-auto text-warning "
+                                    className="text-center font-ar mx-1 my-auto text-warning py-1"
                                 >
 
                                     {
@@ -113,8 +114,7 @@ const NavBar = ({ loginState }) => {
                                     <button type="button" className="btn  text-white position-relative">
                                         <i className="fa-solid fa-cart-shopping"></i>
                                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            99+
-                                            <span className="visually-hidden">unread messages</span>
+                                            0
                                         </span>
                                     </button>
 

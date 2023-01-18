@@ -28,8 +28,6 @@ import { Link } from 'react-router-dom';
 const BottonSwiper = () => {
     return (
         <div className="botton_swiper">
-
-
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}

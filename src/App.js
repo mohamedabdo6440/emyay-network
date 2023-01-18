@@ -10,6 +10,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Firebase/Firebase";
 import HomeAllProducts from "./Pages/HomeAllProducts/HomeAllProducts";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
+import Categores from "./Components/Categores/Categores";
 
 
 
@@ -36,7 +37,10 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/allproducts" element={user ? <HomeAllProducts /> : <LoginPage />} />
-              <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} />
+              <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} >
+                <Route path="categores" element={<Categores />} />
+              </Route>
+
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>

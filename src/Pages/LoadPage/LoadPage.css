@@ -1,0 +1,41 @@
+.handelPup_up {
+    height: 57vh;
+    color: #fff;
+    position: relative;
+}
+
+.Load_image {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+}
+
+@media screen and (max-width: 580px) {
+    .Load_image {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 38%;
+        top: 27%;
+    }
+}
+
+.ServerIssu {
+
+    height: 57vh;
+    color: red;
+    position: relative;
+}
+
+.server_message {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -75px;
+    margin-top: -37.5px;
+
+}

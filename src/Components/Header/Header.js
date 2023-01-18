@@ -172,7 +172,9 @@ const Header = () => {
             </div>
 
             <div className="container">
-                <BottonSwiper />
+                <div className="bottom-swiber-edit">
+                    <BottonSwiper />
+                </div>
             </div>
 
         </header>

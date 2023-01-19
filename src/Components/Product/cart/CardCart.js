@@ -3,7 +3,12 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Rate from '../Rate/Rate'
 
+
 const CardCart = ({ id, categoryName, name, oldprice, newprice, description, image }) => {
+
+
+
+
     return (
         <Card className='shadow-card text-center my-3 mx-2'>
 

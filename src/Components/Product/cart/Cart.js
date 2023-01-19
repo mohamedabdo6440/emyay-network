@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Cart.css'
 
 //handle data from redux
@@ -7,21 +7,35 @@ import { getAllCarts } from '../../../Redux/store/CartSlice'
 import CardCart from './CardCart'
 import ServerIssu from '../../../Pages/LoadPage/ServerIssu'
 import LoadPage from '../../../Pages/LoadPage/LoadPage'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../../Firebase/Firebase'
+
+import adscart from '../../../images/adsCarts/adscart.jpg'
+import adscart2 from '../../../images/adsCarts/adscart2.jpg'
 
 const Cart = () => {
+
+    const [currentUser, setCurrentUser] = useState("")
+    //handle userAccount Name
+    onAuthStateChanged(auth, (currentUser) => {
+        setCurrentUser(currentUser ? currentUser.email : currentUser);
+    })
+
+
 
     //handle data from redux
     const { isLoading, AllCarts } = useSelector((state) => state.carts);
     const dispatch = useDispatch();
 
-    // const AllCartsAdd = localStorage.getItem("Allcarts")
-    // console.log(JSON.parse(AllCartsAdd));
+    //handle function for 
+    const FilterCarts = AllCarts.filter((cart) => {
+        return cart.userAuth === currentUser;
+    })
+
+
     useEffect(() => {
         dispatch(getAllCarts())
     }, [dispatch])
-
-
-    console.log(AllCarts);
 
 
     const { error } = useSelector(state => state.carts)
@@ -30,9 +44,12 @@ const Cart = () => {
     return (
         <div>
             <div className="container">
-                <div className='ads_cart'>
-                    ads
+                <div className='ads_cart d-flex'>
+                    <img src={adscart} alt='ads' className='w-50' />
+                    <img src={adscart2} alt='ads2' className='w-50' />
                 </div>
+
+                <hr />
 
                 <div className='parent_cart'>
                     {
@@ -41,8 +58,8 @@ const Cart = () => {
                                 {
 
                                     isLoading ? (<LoadPage />) : (
-                                        AllCarts.length > 0 ? (
-                                            AllCarts.map((product) => {
+                                        FilterCarts.length > 0 ? (
+                                            FilterCarts.map((product) => {
                                                 return (
                                                     <CardCart
                                                         id={product.id}

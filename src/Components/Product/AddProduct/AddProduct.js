@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { insertProduct } from '../../../Redux/store/ProductsSlice'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../../Firebase/Firebase';
 
 
 
@@ -32,17 +34,18 @@ const SignupSchema = Yup.object().shape({
             value => !value || (value && value.size <= 1024 * 1024))
         .test("FILE_FORMAT", "Uploaded file has unsupported format.",
             value => !value || (value && SUPPORTED_FORMATS.includes(value?.type)))
-
-
 });
 
 
 const AddProduct = () => {
+    const [userAccount, setUserAccount] = useState('');
+    //handle userAccount Name
+    onAuthStateChanged(auth, (currentUser) => {
+        setUserAccount(currentUser ? currentUser.email : currentUser);
+    })
 
 
     // const NewProduct = collection(db, "addProduct")
-
-
     const [image, setImage] = useState("");
     // const [url, setURL] = useState('')
     const [category, setCategory] = useState("clothes")
@@ -117,6 +120,7 @@ const AddProduct = () => {
                     productDescription: '',
                     address: '',
                     productImage: '',
+                    userAuth: '',
                 }}
 
                 validationSchema={SignupSchema}
@@ -126,12 +130,9 @@ const AddProduct = () => {
                     // values.productImage = url;
                     values.productImage = image;
                     values.categoryName = category;
+                    values.userAuth = userAccount;
                     setTimeout(() => {
-
                         // addNewProduct(values)
-
-
-
                         //handle add data to json server
                         dispatch(insertProduct(values))
                         navigate("/allproducts")
@@ -169,17 +170,13 @@ const AddProduct = () => {
                                         ><i className="fa-solid fa-image fa-lg me-3 fa-fw"></i>{fileRef.current.value ? `تم التحميل / ${fileRef.current.value}` : "قم بتحميل صورة المنتج أولا لمراجعتها..."}</button>
                                     </div>
                                     <div className="col-md-6">
-                                        <div className="form-group my-2">
 
+                                        <div className="form-group my-2">
                                             <Field name="salesman" className="form-control" placeholder="أسم صاحب المنتج..." />
                                             {errors.salesman && touched.salesman ? (
                                                 <div className='text-danger text-center py-1'>{errors.salesman}</div>
                                             ) : null}
-
-
                                         </div>
-
-
 
                                         <div className="form-group my-2">
                                             <Field name="phone" className="form-control" placeholder="رقم الهاتف المحمول ..." />

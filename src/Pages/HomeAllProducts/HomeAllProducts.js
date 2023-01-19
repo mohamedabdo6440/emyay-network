@@ -10,9 +10,18 @@ import { insertCart } from '../../Redux/store/CartSlice';
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../Redux/store/ProductsSlice'
 import Footer from '../Layout/Footer/Footer'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../Firebase/Firebase';
 
 
 const HomeAllProducts = () => {
+
+    //handle userAccount Name
+    const [currentUser, setCurrentUser] = useState("")
+    onAuthStateChanged(auth, (currentUser) => {
+        setCurrentUser(currentUser ? currentUser.email : currentUser);
+    })
+
 
     //handle data from redux
     const { isLoading, Allproducts } = useSelector((state) => state.products);
@@ -23,11 +32,9 @@ const HomeAllProducts = () => {
 
 
     //handle add cart function
-
-
     const handleAddToCart = (idProduct) => {
 
-        const afterFilter = Allproducts.filter((dataUse) => {
+        const FilterCartDataUse = Allproducts.filter((dataUse) => {
             return dataUse.id === idProduct;
         })
         const data = {
@@ -37,17 +44,20 @@ const HomeAllProducts = () => {
             productTitle: "",
             productDescription: "",
             productImage: "",
+            userAuth: "",
         }
-        afterFilter.map((datacart) => {
+        FilterCartDataUse.map((datacart) => {
             return (
                 data.id = datacart.id,
                 data.newprice = datacart.newprice,
                 data.oldprice = datacart.oldprice,
                 data.productTitle = datacart.productTitle,
                 data.productDescription = datacart.productDescription,
-                data.productImage = datacart.productImage
+                data.productImage = datacart.productImage,
+                data.userAuth = currentUser
             )
         })
+
         dispatch(insertCart(data))
     }
 

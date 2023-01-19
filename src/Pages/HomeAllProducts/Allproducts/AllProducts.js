@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 // import { getDocs, collection } from 'firebase/firestore'
 // import { db } from '../../../Firebase/Firebase'
 
-const AllProducts = ({ isLoading, Allproducts }) => {
+const AllProducts = ({ isLoading, Allproducts, handleAddToCart }) => {
 
 
     const { error } = useSelector(state => state.products)
@@ -51,6 +51,7 @@ const AllProducts = ({ isLoading, Allproducts }) => {
                                                     description={product.productDescription}
                                                     rate={product.rate}
                                                     image={product.productImage}
+                                                    handleAddToCart={handleAddToCart}
                                                 />
                                             )
                                         })

@@ -4,15 +4,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 
 
-//get data from api
-export const getAllProducts = createAsyncThunk('products/getAllProducts', async (args, thunkAPI) => {
-
+//get cart data from api
+export const getAllCarts = createAsyncThunk('carts/getAllCarts', async (args, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-
-        const res = await fetch('http://localhost:3005/AllProducts');
+        const res = await fetch('http://localhost:3005/cart');
         const data = await res.json();
         return data;
+
+
 
     } catch (error) {
         return rejectWithValue(error.message);
@@ -20,14 +20,14 @@ export const getAllProducts = createAsyncThunk('products/getAllProducts', async 
 });
 
 //insert data into api
-export const insertProduct = createAsyncThunk('products/insertProduct', async (AddProduct, thunkAPI) => {
+export const insertCart = createAsyncThunk('carts/insertCart', async (AddCart, thunkAPI) => {
 
 
     const { rejectWithValue } = thunkAPI;
     try {
-        const res = await fetch('http://localhost:3005/AllProducts', {
+        const res = await fetch('http://localhost:3005/cart', {
             method: 'POST',
-            body: JSON.stringify(AddProduct),
+            body: JSON.stringify(AddCart),
             headers: { 'Content-Type': 'application/json;charset=UTF-8', },
         });
 
@@ -39,10 +39,10 @@ export const insertProduct = createAsyncThunk('products/insertProduct', async (A
     }
 });
 
-export const deleteProduct = createAsyncThunk('products/deleteProduct', async (id, thunkAPI) => {
+export const deleteCarts = createAsyncThunk('carts/deleteCarts', async (id, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-        const res = await fetch(`http://localhost:3005/AllProducts${id}`, {
+        const res = await fetch(`http://localhost:3005/cart${id}`, {
             method: 'DELETE',
 
             headers: { 'Content-Type': 'application/json;charset=UTF-8', },
@@ -56,53 +56,53 @@ export const deleteProduct = createAsyncThunk('products/deleteProduct', async (i
     }
 });
 
-const ProductsSlice = createSlice({
-    name: 'products',
+const CartsSlice = createSlice({
+    name: 'carts',
     initialState: {
-        Allproducts: [{}],
+        AllCarts: [{}],
         isLoading: false,
         error: null,
     },
     extraReducers: {
 
-        //get products
-        [getAllProducts.pending]: (state, action) => {
+        //get cart
+        [getAllCarts.pending]: (state, action) => {
             state.isLoading = true;
             state.error = null;
         },
-        [getAllProducts.fulfilled]: (state, action) => {
+        [getAllCarts.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.Allproducts = action.payload;
+            state.AllCarts = action.payload;
         },
-        [getAllProducts.rejected]: (state, action) => {
+        [getAllCarts.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
         },
 
-        //insert new product
-        [insertProduct.pending]: (state, action) => {
+        //insert new cart
+        [insertCart.pending]: (state, action) => {
             state.isLoading = true;
             state.error = null;
         },
-        [insertProduct.fulfilled]: (state, action) => {
+        [insertCart.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.Allproducts.push(action.payload);
+            state.AllCarts.push(action.payload);
         },
-        [insertProduct.rejected]: (state, action) => {
+        [insertCart.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
         },
 
-        //delete product
-        [deleteProduct.pending]: (state, action) => {
+        //cart delete
+        [deleteCarts.pending]: (state, action) => {
             state.isLoading = true;
             state.error = null;
         },
-        [deleteProduct.fulfilled]: (state, action) => {
+        [deleteCarts.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.Allproducts.push(action.payload);
+            state.AllCarts.push(action.payload);
         },
-        [deleteProduct.rejected]: (state, action) => {
+        [deleteCarts.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
         },
@@ -113,4 +113,4 @@ const ProductsSlice = createSlice({
 
 
 
-export default ProductsSlice.reducer;
+export default CartsSlice.reducer;

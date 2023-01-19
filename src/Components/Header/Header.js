@@ -10,6 +10,10 @@ import cartHeader4 from '../../images/tshert5.jpg'
 import cartHeader5 from '../../images/tshert7.jpg'
 import cartHeader6 from '../../images/tshert8.jpg'
 
+import cartHeader7 from '../../images/cam1.jpg'
+import cartHeader8 from '../../images/cam2.avif'
+import cartHeader9 from '../../images/cam3.jpg'
+
 
 
 // import required modules
@@ -21,7 +25,7 @@ import Footer from "../../Pages/Layout/Footer/Footer";
 const Header = () => {
 
     return (
-        <header className='Header px-2'>
+        <header className='Header'>
             <div className='parent_swiper'>
                 <TopSwiper />
             </div>
@@ -48,7 +52,15 @@ const Header = () => {
                     <ReusableCard image={cartHeader5} title={"The latest | international | fashion"} oldprice={"280"} newprice={"150"} />
                     <ReusableCard image={cartHeader6} title={"T-Shert Prands"} oldprice={"560"} newprice={"330"} />
                 </div>
+            </div>
 
+            <div className="container ">
+                <div className="row">
+                    {/*cards in header*/}
+                    <ReusableCard image={cartHeader7} title={"Protection Systems| Up to 40%"} oldprice={"1070"} newprice={"830"} />
+                    <ReusableCard image={cartHeader8} title={"All types | And | Features"} oldprice={"680"} newprice={"450"} />
+                    <ReusableCard image={cartHeader9} title={"Smart surveillance camera"} oldprice={"560"} newprice={"410"} />
+                </div>
             </div>
 
             <Footer />

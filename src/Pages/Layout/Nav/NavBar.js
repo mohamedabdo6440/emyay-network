@@ -13,6 +13,7 @@ import './NavBar.css';
 
 const NavBar = ({ loginState }) => {
 
+
     const [userIN, setUserIN] = useState(null)
     //  const Is_Login = localStorage.getItem("username");
 
@@ -105,13 +106,13 @@ const NavBar = ({ loginState }) => {
                             </NavLink>
 
                             <NavLink
-                                to="/"
+                                to="cart"
                                 className="nav-text d-flex  justify-content-center my-auto mx-1 p-0"
                                 style={{ color: "white", textDecoration: "none" }}
                             >
                                 <h3 className=" mt-2 me-2">
 
-                                    <button type="button" className="btn  text-white position-relative">
+                                    <button className="btn  text-white position-relative">
                                         <i className="fa-solid fa-cart-shopping"></i>
                                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                             0

@@ -5,9 +5,9 @@ import { Card } from 'react-bootstrap';
 import Rate from './Rate/Rate';
 
 
-const Product = ({ id, categoryName, name, oldprice, newprice, description, image }) => {
+const Product = ({ id, categoryName, name, oldprice, newprice, description, image, handleAddToCart }) => {
 
-
+   
 
     //handle rate product
 
@@ -90,7 +90,7 @@ const Product = ({ id, categoryName, name, oldprice, newprice, description, imag
                                 <strong className="price_product my-2"><span className="badge text-bg-light">EGP</span>{newprice}</strong>
                             </div>
                         </div>
-                        <button className="btn btn-outline-dark">أضف الي العربة <i className="fa-solid fa-cart-plus"></i></button>
+                        <button className="btn btn-outline-dark" onClick={() => handleAddToCart(id)}>أضف الي العربة <i className="fa-solid fa-cart-plus"></i></button>
                     </div>
                 </Card.Body>
             </Card>

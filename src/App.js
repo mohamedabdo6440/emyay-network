@@ -11,6 +11,7 @@ import { auth } from "./Firebase/Firebase";
 import HomeAllProducts from "./Pages/HomeAllProducts/HomeAllProducts";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
 import Categores from "./Components/Categores/Categores";
+import Cart from "./Components/Product/cart/Cart";
 
 
 
@@ -37,11 +38,13 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/allproducts" element={user ? <HomeAllProducts /> : <LoginPage />} />
+              <Route path="/cart" element={user ? <Cart /> : <HomePage />} />
+              <Route path="*" element={<Error />} />
+
               <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} >
                 <Route path="categores" element={<Categores />} />
               </Route>
 
-              <Route path="*" element={<Error />} />
             </Route>
           </Routes>
         </Layout>

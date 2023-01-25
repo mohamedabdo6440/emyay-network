@@ -4,25 +4,22 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import SideBar from "../../../Components/SideBar/SideBar";
-
-
 import { Outlet, NavLink } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../../Firebase/Firebase";
 import './NavBar.css';
 
+
+
+
 const NavBar = ({ loginState }) => {
 
 
+    //checked user exist everyTime
     const [userIN, setUserIN] = useState(null)
-    //  const Is_Login = localStorage.getItem("username");
-
-
-    // //checked user exist everyTime
     onAuthStateChanged(auth, (currentUser) => {
         setUserIN(currentUser ? currentUser.email : currentUser)
     })
-
 
     //Hnadle LogOut
     const LogOut = async () => {
@@ -110,16 +107,15 @@ const NavBar = ({ loginState }) => {
                                 className="nav-text d-flex  justify-content-center my-auto mx-1 p-0"
                                 style={{ color: "white", textDecoration: "none" }}
                             >
-                                <h3 className=" mt-2 me-2">
+                                <div className=" mt-2 me-2">
 
-                                    <button className="btn  text-white position-relative">
+                                    <h3 className="btn  text-white position-relative">
                                         <i className="fa-solid fa-cart-shopping"></i>
-                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            0
-                                        </span>
-                                    </button>
-
-                                </h3>
+                                        {/* <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                           
+                                        </span> */}
+                                    </h3>
+                                </div>
 
                             </NavLink>
 

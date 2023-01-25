@@ -5,9 +5,9 @@ import { Card } from 'react-bootstrap';
 import Rate from './Rate/Rate';
 
 
-const Product = ({ id, categoryName, name, oldprice, newprice, description, image, handleAddToCart }) => {
+const Product = ({ id, categoryName, name, oldprice, newprice, description, image, handleAddToCart, dispatch, productDetails }) => {
 
-   
+
 
     //handle rate product
 
@@ -69,7 +69,7 @@ const Product = ({ id, categoryName, name, oldprice, newprice, description, imag
     return (
         <div className='col-md-4' key={id}>
             <Card className='shadow-card text-center my-3 mx-2'>
-                <Link to="/detilsproduct">
+                <Link to={`/productDetails/${id}`}>
 
                     <Card.Img variant="top" src={image} className="image_product" />
 

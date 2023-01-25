@@ -38,13 +38,14 @@ const HomeAllProducts = () => {
             return dataUse.id === idProduct;
         })
         const data = {
+
             id: null,
             newprice: "",
             oldprice: "",
             productTitle: "",
             productDescription: "",
-            productImage: "",
             userAuth: "",
+            productImage: "",
         }
         FilterCartDataUse.map((datacart) => {
             return (
@@ -60,6 +61,7 @@ const HomeAllProducts = () => {
 
         dispatch(insertCart(data))
     }
+
 
     return (
         <>

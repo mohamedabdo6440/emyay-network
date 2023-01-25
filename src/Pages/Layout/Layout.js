@@ -3,13 +3,15 @@ import NavBar from './Nav/NavBar'
 
 const Layout = ({ children }) => {
     return (
-        <main>
+        <>
             <NavBar />
+            <main>
 
-            {children}
+                {children}
 
 
-        </main>
+            </main>
+        </>
     )
 }
 

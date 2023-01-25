@@ -21,8 +21,6 @@ export const getAllProducts = createAsyncThunk('products/getAllProducts', async 
 
 //insert data into api
 export const insertProduct = createAsyncThunk('products/insertProduct', async (AddProduct, thunkAPI) => {
-
-
     const { rejectWithValue } = thunkAPI;
     try {
         const res = await fetch('http://localhost:3005/AllProducts', {
@@ -39,17 +37,34 @@ export const insertProduct = createAsyncThunk('products/insertProduct', async (A
     }
 });
 
+
+//get product details from api
+export const productInfo = createAsyncThunk('products/productInfo', async (id, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+        await fetch(`http://localhost:3005/AllProducts/${id}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json;charset=UTF-8', },
+        });
+
+        return id;
+
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+});
+
 export const deleteProduct = createAsyncThunk('products/deleteProduct', async (id, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-        const res = await fetch(`http://localhost:3005/AllProducts${id}`, {
+        await fetch(`http://localhost:3005/AllProducts/${id}`, {
             method: 'DELETE',
 
             headers: { 'Content-Type': 'application/json;charset=UTF-8', },
         });
 
-        console.log(res);
-        return res;
+
+        return id;
 
     } catch (error) {
         return rejectWithValue(error.message)
@@ -79,6 +94,20 @@ const ProductsSlice = createSlice({
             state.error = action.payload;
         },
 
+        //get product details
+        [productInfo.pending]: (state, action) => {
+            state.isLoading = true;
+            state.error = null;
+        },
+        [productInfo.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.Allproducts = state.Allproducts.filter((pro) => pro.id === action.payload)
+        },
+        [productInfo.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
+
         //insert new product
         [insertProduct.pending]: (state, action) => {
             state.isLoading = true;
@@ -100,7 +129,7 @@ const ProductsSlice = createSlice({
         },
         [deleteProduct.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.Allproducts.push(action.payload);
+            state.Allproducts = state.Allproducts.filter(pro => pro.id !== action.payload);
         },
         [deleteProduct.rejected]: (state, action) => {
             state.isLoading = false;

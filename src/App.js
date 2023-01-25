@@ -1,17 +1,19 @@
 
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout/Layout";
 import HomePage from "./Pages/Home/Home"
 import LoginPage from "./Pages/Auth/LoginPage";
 import RegisterPage from "./Pages/Auth/RegisterPage";
 import Error from './Pages/Error/ErrorPage'
-import { useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Firebase/Firebase";
 import HomeAllProducts from "./Pages/HomeAllProducts/HomeAllProducts";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
 import Categores from "./Components/Categores/Categores";
 import Cart from "./Components/Product/cart/Cart";
+import ProducDetails from "./Components/Product/ProductDetails/ProducDetails";
+import ProductInfo from "./Components/Product/ProductDetails/ProductInfo";
 
 
 
@@ -22,17 +24,17 @@ function App() {
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser ? currentUser.email : currentUser);
   })
-  console.log(user);
 
+
+  //handle cart
 
   return (
 
     <div className="App">
       <BrowserRouter>
         <Layout>
-
-
           <Routes>
+
             <Route path="/">
               <Route index element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -40,9 +42,11 @@ function App() {
               <Route path="/allproducts" element={user ? <HomeAllProducts /> : <LoginPage />} />
               <Route path="/cart" element={user ? <Cart /> : <LoginPage />} />
               <Route path="*" element={<Error />} />
+              <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} />
+              <Route path="/categores" element={<Categores />} />
 
-              <Route path="/addproduct" element={user ? <AddProduct /> : <HomePage />} >
-                <Route path="categores" element={<Categores />} />
+              <Route path="/productDetails" element={<ProducDetails />}>
+                <Route path=":prodId" element={<ProductInfo />} />
               </Route>
 
             </Route>

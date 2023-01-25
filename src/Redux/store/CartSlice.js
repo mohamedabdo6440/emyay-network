@@ -32,6 +32,7 @@ export const insertCart = createAsyncThunk('carts/insertCart', async (AddCart, t
         });
 
         const data = await res.json();
+
         return data;
 
     } catch (error) {
@@ -39,17 +40,15 @@ export const insertCart = createAsyncThunk('carts/insertCart', async (AddCart, t
     }
 });
 
-export const deleteCarts = createAsyncThunk('carts/deleteCarts', async (id, thunkAPI) => {
+export const deleteCarts = createAsyncThunk('carts/deleteCarts', async (idCart, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-        const res = await fetch(`http://localhost:3005/cart${id}`, {
+        await fetch(`http://localhost:3005/cart/${idCart}`, {
             method: 'DELETE',
-
             headers: { 'Content-Type': 'application/json;charset=UTF-8', },
         });
 
-        console.log(res);
-        return res;
+        return idCart;
 
     } catch (error) {
         return rejectWithValue(error.message)
@@ -100,7 +99,7 @@ const CartsSlice = createSlice({
         },
         [deleteCarts.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.AllCarts.push(action.payload);
+            state.AllCarts = state.AllCarts.filter((cart) => cart.id !== action.payload);
         },
         [deleteCarts.rejected]: (state, action) => {
             state.isLoading = false;

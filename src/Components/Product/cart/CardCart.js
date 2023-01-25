@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 import Rate from '../Rate/Rate'
 
 
-const CardCart = ({ id, categoryName, name, oldprice, newprice, description, image }) => {
 
 
+
+const CardCart = ({ id, categoryName, name, oldprice, newprice, description, image, deleteCarts, dispatch }) => {
 
 
     return (
-        <Card className='shadow-card text-center my-3 mx-2'>
+        <Card className='shadow-card text-center my-3 mx-2' key={id}>
 
             <div className='d-flex'>
                 <Card.Body>
@@ -28,11 +29,11 @@ const CardCart = ({ id, categoryName, name, oldprice, newprice, description, ima
                                 <strong className="price_product my-2"><span className="badge text-bg-light">EGP</span>{newprice}</strong>
                             </div>
                         </div>
-                        <button className="btn btn-outline-danger">ازاله من العربة <i className="fa-solid fa-cart-plus"></i></button>
+                        <button onClick={() => { dispatch(deleteCarts(id)) }} className="btn btn-outline-danger">ازاله من العربة <i className="fa-solid fa-cart-plus"></i></button>
                     </div>
 
                 </Card.Body>
-                <Link to="/Allproducts">
+                <Link to={`/productDetails/${id}`}>
 
                     <Card.Img variant="top" src={image} className="image_product" />
 

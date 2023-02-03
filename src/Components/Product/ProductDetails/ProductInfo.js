@@ -16,8 +16,6 @@ const ProductInfo = ({ id, productTitle, oldprice, newprice, productDescription,
 
 
 
-
-
     //handle product if exists in cart or not 
     const handleAddToCart = () => {
         dispatch(insertCart({
@@ -63,9 +61,9 @@ const ProductInfo = ({ id, productTitle, oldprice, newprice, productDescription,
 
 
                 </div>
-            </Card>
-            <Card>
-                <BottonSwiper />
+                <div className='m-auto w-75'>
+                    <BottonSwiper />
+                </div>
             </Card>
         </div>
     )

@@ -3,31 +3,13 @@ import './AllProducts.css'
 import Product from '../../../Components/Product/Product'
 import LoadPage from '../../LoadPage/LoadPage'
 import ServerIssu from '../../LoadPage/ServerIssu'
-
 import { useSelector } from 'react-redux'
-// import Products from '../../../test.json'
-// import { getDocs, collection } from 'firebase/firestore'
-// import { db } from '../../../Firebase/Firebase'
 
-const AllProducts = ({ isLoading, Allproducts, handleAddToCart }) => {
+
+const AllProducts = ({ isLoading, Allproducts, handleAddToCart, filter }) => {
 
 
     const { error } = useSelector(state => state.products)
-
-
-
-    // const [AllProductData, setAllProductData] = useState([{}])
-    // const newProductRef = collection(db, "addProduct")
-    // //get product from database
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         const dataFire = await getDocs(newProductRef);
-    //         setAllProducts(dataFire.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    //     }
-    //     getData()
-    // }, [newProductRef]);
-
-
 
     return (
         <div className='row products_list'>

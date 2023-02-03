@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './HomeAllProducts.css'
 
 //ads image
@@ -7,15 +7,17 @@ import AllProducts from './Allproducts/AllProducts'
 
 //handle data from redux
 import { insertCart } from '../../Redux/store/CartSlice';
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllProducts } from '../../Redux/store/ProductsSlice'
+import { useDispatch } from 'react-redux'
+
 import Footer from '../Layout/Footer/Footer'
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase';
 
 
-const HomeAllProducts = () => {
 
+const HomeAllProducts = ({ Allproducts, isLoading }) => {
+
+    const dispatch = useDispatch()
     //handle userAccount Name
     const [currentUser, setCurrentUser] = useState("")
     onAuthStateChanged(auth, (currentUser) => {
@@ -23,17 +25,9 @@ const HomeAllProducts = () => {
     })
 
 
-    //handle data from redux
-    const { isLoading, Allproducts } = useSelector((state) => state.products);
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getAllProducts())
-    }, [dispatch])
-
 
     //handle add cart function
     const handleAddToCart = (idProduct) => {
-
         const FilterCartDataUse = Allproducts.filter((dataUse) => {
             return dataUse.id === idProduct;
         })
@@ -59,8 +53,10 @@ const HomeAllProducts = () => {
             )
         })
 
-        dispatch(insertCart(data))
+        dispatch(insertCart(data));
     }
+
+
 
 
     return (
@@ -74,6 +70,8 @@ const HomeAllProducts = () => {
                 <div className='my-4'>
                     <img src={adsproducts} alt="adsProducts" className='w-100 h-50 ' />
                 </div>
+
+
 
                 <AllProducts isLoading={isLoading} Allproducts={Allproducts} handleAddToCart={handleAddToCart} />
 

@@ -23,7 +23,6 @@ const ProducDetails = () => {
     const Params = useParams();
     const ProductID = parseInt(Params.prodId);
 
-    console.log(ProductID);
 
     //handle userAccount Name
     const [currentUser, setCurrentUser] = useState("")

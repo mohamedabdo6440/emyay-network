@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import SideBar from "../../../Components/SideBar/SideBar";
@@ -12,7 +11,11 @@ import './NavBar.css';
 
 
 
+
+
 const NavBar = ({ loginState }) => {
+
+
 
 
     //checked user exist everyTime
@@ -58,13 +61,15 @@ const NavBar = ({ loginState }) => {
 
 
 
-                        <Form.Control
+
+                        <input
                             type="search"
                             placeholder="إبحث...."
-                            className="mx-sm-2 my-2 py-1 w-100 font-ar"
+                            className="mx-sm-2 my-2 p-2 w-100 font-ar"
                             aria-label="Search"
 
                         />
+
 
                         <Nav
                             className=" "
